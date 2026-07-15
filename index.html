@@ -42,7 +42,13 @@ nav{
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--line);
 }
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 28px;gap:24px;}
+nav .wrap{
+    display:flex;
+    align-items:center;
+    height:64px;
+    padding:0 28px;
+    gap:16px;
+}
 .brand{font-family:'Space Grotesk';font-weight:700;font-size:1.05rem;display:flex;align-items:center;gap:8px;}
 .brand .dot{width:8px;height:8px;border-radius:50%;background:var(--fusion);}
 .navlinks{display:flex;gap:32px;font-size:0.88rem;color:var(--muted);}
@@ -105,6 +111,25 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
     width:14px;
     height:14px;
   }
+}
+
+  @media (max-width:720px){
+
+    .brand{
+        flex:1;
+    }
+
+    .nav-resume{
+        margin-left:auto;
+        margin-right:8px;
+        display:block;
+    }
+
+    .hamburger{
+        display:flex;
+        margin-left:0;
+    }
+
 }
 
 /* hero */
@@ -328,7 +353,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 .resume-menu a .dot2{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
 .resume-menu a.p .dot2{background:var(--blue);} .resume-menu a.p:hover{color:var(--blue);}
 .resume-menu a.s .dot2{background:var(--violet);} .resume-menu a.s:hover{color:var(--violet);}
-@media (max-width:720px){.nav-resume{margin-left:auto;}}
+
 
 /* profile photo */
 .profile-top{display:flex;gap:18px;align-items:center;margin-bottom:18px;}
