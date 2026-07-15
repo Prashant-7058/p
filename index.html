@@ -20,7 +20,7 @@
   --fusion: linear-gradient(90deg,var(--blue),var(--violet));
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+html{scroll-behavior:smooth;overflow-x:hidden;width:100%;}
 body{
   background:var(--bg);
   color:var(--text);
@@ -286,6 +286,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 .nav-resume.open .resume-trigger .chev{transform:rotate(180deg);}
 .resume-menu{
   position:absolute;top:calc(100% + 10px);right:0;min-width:200px;
+  max-width:calc(100vw - 32px);
   background:var(--surface);border:1px solid var(--line);border-radius:12px;
   padding:8px;box-shadow:0 18px 40px -16px rgba(0,0,0,0.6);
   opacity:0;visibility:hidden;transform:translateY(-6px);
@@ -296,6 +297,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 .resume-menu a{
   display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;
   font-size:0.86rem;color:var(--text);transition:background .2s,color .2s;
+  white-space:normal;word-break:break-word;
 }
 .resume-menu a:hover{background:var(--surface-2);}
 .resume-menu a .dot2{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
@@ -339,6 +341,34 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
   filter:saturate(0.92) brightness(0.95);
 }
 .proj-card:hover .proj-img img{transform:scale(1.06);filter:saturate(1.05) brightness(1.02);}
+
+
+/* --- Clickable phone: call or WhatsApp --- */
+.contact-card .phone-row{
+  display:flex; flex-wrap:wrap; gap:10px; margin-bottom:8px;
+}
+.contact-card .phone-row a{
+  display:inline-flex; align-items:center; gap:6px;
+  font-size:0.85rem; padding:7px 12px; border-radius:8px;
+  border:1px solid var(--line); background:var(--surface-2);
+  color:var(--text); margin:0; transition:border-color .2s,color .2s,transform .2s;
+}
+.contact-card.p .phone-row a:hover{ border-color:var(--blue); color:var(--blue); transform:translateY(-2px); }
+.contact-card.s .phone-row a:hover{ border-color:var(--violet); color:var(--violet); transform:translateY(-2px); }
+
+/* --- Extra mobile-safety patch: stop horizontal scrolling on phones --- */
+img, svg { max-width:100%; height:auto; }
+.about-grid > *, .skills-grid > *, .proj-grid > *, .research-grid > *,
+.contact-grid > *, .timeline > *, .navlinks > *, .mobile-menu > * {
+  min-width:0;
+}
+.tags, .cert-list { min-width:0; }
+.tag, .cert-chip, .research-tag, .t-who { word-break:break-word; overflow-wrap:break-word; }
+.wrap { width:100%; box-sizing:border-box; }
+@media (max-width:480px){
+  .hero-names{ gap:24px; }
+  .t-who{ display:inline-block; margin-top:4px; margin-left:0; }
+}
 </style>
 </head>
 <body>
@@ -694,14 +724,14 @@ This project helps users make better dietary decisions by analyzing ingredients 
       <div class="contact-card p reveal">
         <div class="who">PRASHANT SHIRGAVE</div>
         <a href="mailto:prashantss1404@gmail.com">prashantss1404@gmail.com</a>
-        <span class="row">+91 70580 15179</span>
+        <span class="row phone-row"><a class="phone-call" href="tel:+917058015179">📞 +91 70580 15179</a><a class="phone-wa" href="https://wa.me/917058015179" target="_blank" rel="noopener">💬 WhatsApp</a></span>
         <a href="https://www.linkedin.com/in/prashant-shirgave-35a4b42a6/" target="_blank" rel="noopener">LinkedIn ↗</a>
         <a href="https://github.com/Prashant-7058" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
       <div class="contact-card s reveal">
         <div class="who">Suparshav Patil</div>
         <a href="mailto:patilparshav18@gmail.com">patilparshav18@gmail.com</a>
-        <span class="row">+91 8625832108</span>
+        <span class="row phone-row"><a class="phone-call" href="tel:+918625832108">📞 +91 8625832108</a><a class="phone-wa" href="https://wa.me/918625832108" target="_blank" rel="noopener">💬 WhatsApp</a></span>
         <a href="https://www.linkedin.com/in/suparshav-patil-43102826b/"target="_blank" rel="noopener">LinkedIn ↗</a>
         <a href="https://github.com/parshavpatil" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
