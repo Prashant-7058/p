@@ -47,11 +47,17 @@ nav .wrap{
     align-items:center;
     height:64px;
     padding:0 28px;
-    gap:16px;
 }
 .brand{font-family:'Space Grotesk';font-weight:700;font-size:1.05rem;display:flex;align-items:center;gap:8px;}
 .brand .dot{width:8px;height:8px;border-radius:50%;background:var(--fusion);}
-.navlinks{display:flex;gap:32px;font-size:0.88rem;color:var(--muted);}
+.navlinks{
+    display:flex;
+    align-items:center;
+    gap:38px;
+    margin-left:36px;
+    font-size:0.88rem;
+    color:var(--muted);
+}
 .navlinks a:hover{color:var(--text);}
 @media (max-width:720px){.navlinks{display:none;}}
 
@@ -321,7 +327,11 @@ footer{text-align:center;padding:36px 0;color:var(--muted);font-size:0.8rem;bord
 a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px;}
 
 /* nav resumes dropdown */
-.nav-resume{position:relative;}
+/* nav resumes dropdown */
+.nav-resume{
+    position:relative;
+    margin-left:auto;
+}
 .resume-trigger{
   display:inline-flex;align-items:center;gap:8px;
   font-family:'JetBrains Mono';font-size:0.82rem;font-weight:500;
